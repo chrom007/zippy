@@ -1,0 +1,17 @@
+<div class="menu wrap">
+	<a href="/" class="logo"><img src="img/logo.png"></a>
+	<a href="/">Home</a>
+	<a href="/contact">Contact</a>
+	<a href="/about">About Us</a>
+	<a href="/faq">FAQs</a>
+	<a href="/vendor">Vendor Resources</a>
+
+	<div class="login" ng-show="loggined == true">
+		<a href="/search">Search</a>
+	</div>
+
+	<div class="login" ng-show="loggined == false">
+		<a href="/signup" class="reg">Register</a>
+		<a href="/signin" class="log">Login</a>
+	</div>
+</div>
