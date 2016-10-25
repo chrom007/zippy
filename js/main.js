@@ -53,6 +53,11 @@ app.controller('mainController', function($scope, $rootScope, $location){
 		$rootScope.token = data.token;
 		$location.path("/account");
 	});
+
+	$scope.logout = function() {
+		var host = document.location.host;
+		document.location.href = "//" + host;
+	};
 });
 
 app.controller('homeController', function($scope){
@@ -69,6 +74,15 @@ app.controller('signinController', function($scope, $rootScope, API){
 		$scope.login = data.login;
 		$scope.password = data.password;
 		$scope.signin();
+	});
+
+	// SUCCESS SIGNUP ACTION if SIGNIN page FIRST LOAD
+	$scope.$on('$viewContentLoaded', function() {
+		if ($rootScope.login) {
+			$scope.login = $rootScope.login;
+			$scope.password = $rootScope.password;
+			$scope.signin();
+		}
 	});
 
 	$scope.signin = function() {
@@ -89,7 +103,7 @@ app.controller('signinController', function($scope, $rootScope, API){
 });
 
 
-app.controller('signupController', function($scope, $rootScope, API){
+app.controller('signupController', function($scope, $rootScope, API, $location){
 	$scope.login = null;
 	$scope.password = null;
 	$scope.password_2 = null;
@@ -99,7 +113,12 @@ app.controller('signupController', function($scope, $rootScope, API){
 		if ($scope.password == $scope.password_2) {
 			API.signup($scope.login, $scope.password).then(function(data){
 				// SUCCESS SIGNUP ACTION
-				if (data.data.error == null) {
+				console.log(data);
+				if (data.data.result == true) {
+					$rootScope.login = $scope.login;
+					$rootScope.password = $scope.password;
+
+					$location.path("/signin");
 					$rootScope.$broadcast("signup_success", {
 						login: $scope.login,
 						password: $scope.password
