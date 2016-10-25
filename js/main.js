@@ -1,25 +1,3 @@
-$(document).ready(function(){
-
-	// IF ELEMENT EXIST (ThisPage - FAQ)
-	if ( $(".faq_list") ) {
-
-		$(".faq_list .item .ask").click(function(){
-			$(".faq_list .item").removeClass("open");
-			/*$(".faq_list .item .answer").each(function(){
-				if ( $(this).css("display") == "block" ) {
-					$(this).toggle("slow");
-				}
-			})*/
-
-
-			$(this).parent().toggleClass("open");
-			$(this).parent().find(".answer").toggle("slow");
-		});
-	}
-});
-
-
-
 
 var app = angular.module("zippyApp", ['ngRoute']);
 
@@ -40,7 +18,8 @@ app.config(function($routeProvider, $locationProvider) {
 		templateUrl: 'templates/account.html'
 	})
 	.when('/faq', {
-		templateUrl: 'templates/faq.html'
+		templateUrl: 'templates/faq.html',
+		controller: 'faqController'
 	})
 	.when('/signin', {
 		templateUrl: 'templates/signin.html',
@@ -144,4 +123,17 @@ app.controller('searchController', function($scope, $rootScope, API){
 			console.log(data)
 		});
 	};
+});
+
+
+app.controller('faqController', function($scope){
+	$scope.$on('$viewContentLoaded', function() {
+		// IF ELEMENT EXIST (ThisPage - FAQ)
+		if ( $(".faq_list") ) {
+			$(".faq_list .item .ask").click(function(){
+				$(this).parent().toggleClass("open");
+				$(this).parent().find(".answer").toggle("slow");
+			});
+		}
+	});
 });
