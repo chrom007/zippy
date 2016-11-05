@@ -15,7 +15,7 @@
 		<div class="form">
 			<h2>SPORTING GOODS</h2>
 			<label>Miles from zip code:</label>
-			<input type="number" class="half" placeholder="0" >
+			<input type="number" class="half" placeholder="0" ng-model="params.radius">
 			<input type="text" class="half" placeholder="from zip">
 
 			<label>Price:</label>
@@ -24,8 +24,14 @@
 
 			<label>Status Option:</label>
 			<select ng-model="params.status">
-				<option value="0">Available</option>
-				<option value="1">Not Available</option>
+				<option value="">- Not Selected -</option>
+				<option value="1">Available</option>
+				<option value="2">Not Available</option>
+			</select>
+
+			<label>Job Type:</label>
+			<select ng-model="params.job_type">
+				<option ng-repeat="type in types" value="{{ type.id }}">{{ type.title }}</option>
 			</select>
 
 			<button ng-click="search()">Update Search</button>
@@ -33,13 +39,14 @@
 	</div>
 
 	<div class="content">
-		<div class="user">
+		<div class="user" ng-repeat="user in users">
 			<div class="left">
 				<div class="avatar">
-					<img src="img/search_user.jpg">
+					<img src="img/search_user.jpg" ng-if="user.avatar_url == null">
+					<img src="{{ api_img + user.avatar_url }}" ng-if="user.avatar_url != null">
 				</div>
-				<div class="av selected"><span></span>Available</div>
-				<div class="av not_av"><span></span>Not Available</div>
+				<div class="av" ng-class="avClass(1, user.vendor_status)"><span></span>Available</div>
+				<div class="av not_av" ng-class="avClass(2, user.vendor_status)"><span></span>Not Available</div>
 			</div>
 
 			<div class="about">
@@ -64,13 +71,17 @@
 						</div>
 					</div>
 
-					<b>Jimmy Johnson</b>
+					<b>{{ user.first_name }} {{ user.last_name }}</b>
 					<br>
 				</div>
 
 				<div class="info">
 					<b>Experience/background description:</b>
-					<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,<br>adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,<br>adipisci velit.</p>
+					<p ng-if="user.vendor_description == null">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,<br>adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,<br>adipisci velit.{{ user.vendor_description }}</p>
+				</div>
+
+				<div class="job_types">
+					<div ng-repeat="types in user.job_types">{{ types.title }}</div>
 				</div>
 
 				<div class="rate">
@@ -149,8 +160,8 @@
 
 		<div class="pagination">
 			<div>« Previous</div>
-			<div>1</div>
-			<div class="selected">2</div>
+			<div class="selected">1</div>
+			<div>2</div>
 			<div>3</div>
 			<div>4</div>
 			<div>...</div>

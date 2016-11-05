@@ -23,6 +23,20 @@ a {
 	position: relative;
 }
 
+.w10 {width: 10%}
+.w20 {width: 20%}
+.w25 {width: 25%}
+.w30 {width: 30%}
+.w35 {width: 35%}
+.w40 {width: 40%}
+.w50 {width: 50%}
+.w60 {width: 60%}
+.w70 {width: 70%}
+.w80 {width: 80%}
+.w90 {width: 90%}
+.upper {text-transform: uppercase;}
+.hidden {display: none; opacity: 0; visibility: hidden;}
+
 
 /*--------------- HEADER ---------------*/
 
@@ -1084,6 +1098,25 @@ a {
 .account .info .half.item.main .edit {padding-right: 30px;}
 .account .info .half.item.alter span {min-width: 160px;}
 
+
+.account .info input, .account .info select {
+	border: none;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	background: transparent;
+	padding: 5px;
+	margin: -5px 0px;
+	margin-bottom: -7px;
+	box-sizing: border-box;
+	outline: none;
+}
+.account .info input.editable, .account .info select.editable {
+	padding-left: 4px;
+	border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.025);
+}
+
 .account .info .save {
 	background-color: #333e48;
 	color: white;
@@ -1103,11 +1136,27 @@ a {
 	text-align: center;
 	box-sizing: border-box;
 	margin-top: 50px;
+	position: relative;
 }
 .account .info .save:hover {
 	background-color: #20272e;
 }
 
+.account .info .save .success {
+	position: absolute;
+	padding: 15px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	color: white;
+	background: #00a3af;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.account .info .save .success.true {
+	opacity: 1;
+}
 
 
 
@@ -1234,8 +1283,13 @@ a {
 	border: 1px solid #dcdcdc;
 	box-shadow: 1px 1px 1px #dcdcdc;
 	margin-bottom: 25px;
+	min-width: 120px;
+	min-height: 120px;
 }
-.search_page .user .left .avatar img {display: block;}
+.search_page .user .left .avatar img {
+	display: block;
+	width: 100%;
+}
 
 .search_page .user .left .av {
 	margin-top: 7px;
@@ -1312,6 +1366,22 @@ a {
 	text-align: left;
 }
 
+.search_page .user .about .job_types {
+	padding: 15px 0px;
+	border-bottom: 1px solid #dfdddd;
+}
+.search_page .user .about .job_types div {
+	padding: 8px 20px;
+	background: #fefefe;
+	border: 1px solid #d2d2d2;
+	color: #696969;
+	font-weight: 400;
+	font-size: 13px;
+	display: inline-block;
+	border-radius: 200px;
+	margin-right: 5px;
+}
+
 .search_page .user .about .rate {
 	font-weight: 800;
 	color: #333;
@@ -1376,4 +1446,569 @@ a {
 .search_page .pagination div.selected {
 	background: #595959;
 	color: white;
+}
+
+
+
+/*************************************/
+/************ Vendor DASH ************/
+/*************************************/
+
+.vendordash {
+	padding-top: 35px;
+	padding-bottom: 50px;
+}
+.vendordash .left {
+	width: 650px;
+	float: left;
+	vertical-align: top;
+	margin-right: 80px;
+	box-sizing: border-box;
+}
+.vendordash .right {
+	width: 400px;
+	float: left;
+	vertical-align: top;
+	box-sizing: border-box;
+}
+
+.vendordash .user .avatar {
+	padding: 4px;
+	border: 1px solid #dcdcdc;
+	box-shadow: 1px 1px 1px #dcdcdc;
+	margin-bottom: 15px;
+	width: 120px;
+	height: 120px;
+	display: inline-block;
+}
+.vendordash .user .avatar img {display: block;}
+
+.vendordash .user .info {
+	float: right;
+	vertical-align: top;
+	text-align: right;
+}
+.vendordash .user .info .rating {
+	margin-top: 10px;
+	font-weight: 400;
+}
+.vendordash .user .av {
+	margin-top: 7px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #d1d1d1;
+}
+.vendordash .user .info .status {
+	display: block;
+	float: right;
+	text-align: left;
+}
+.vendordash .user .av span {
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	vertical-align: baseline;
+	background-color: #ebeaea;
+	margin-right: 10px;
+	border-radius: 100%;
+}
+.vendordash .user .av.selected {
+	color: #666;
+}
+.vendordash .user .av.selected span {background: #32c904}
+.vendordash .user .not_av.selected span {background: #c93204}
+
+.vendordash .user .name {
+	font-size: 16px;
+	color: #666;
+	font-weight: 400;
+	margin: 0px;
+	margin-bottom: 30px;
+}
+.vendordash .user .name b {
+	display: block;
+	color: #333;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.vendordash .description label, .vendordash .other label, .vendordash .list label {
+	color: #666;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 10px;
+	display: block;
+}
+.vendordash .description label small {
+	font-size: 13px;
+	color: #b2afaf;
+	font-weight: 400;
+}
+.vendordash .description label a {
+	color: #1a63c6;
+	float: right;
+	text-decoration: underline;
+	font-size: 14px;
+	cursor: pointer;
+}
+.vendordash .description textarea {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 80px;
+	font-family: "Open Sans";
+	font-weight: 400;
+	color: #333;
+	background: white;
+	border: 1px solid #c2c2c2;
+	margin-bottom: 25px;
+	max-width: 100%;
+	outline: none;
+}
+
+.vendordash .list {
+	margin-bottom: 25px;
+}
+
+.vendordash .list select {
+	border: 1px solid #c2c2c2;
+	font-size: 14px;
+	font-family: "Open Sans";
+	font-weight: 400;
+	background: white;
+	width: 260px;
+	box-sizing: border-box;
+	padding: 7px 5px;
+	outline: none;
+}
+
+.vendordash .list .items {
+	float: right;
+	width: 370px;
+	vertical-align: top;
+}
+.vendordash .list .items div {
+	padding: 8px 20px;
+	padding-right: 10px;
+	background: #fefefe;
+	border: 1px solid #d2d2d2;
+	color: #908f8f;
+	font-weight: 400;
+	font-size: 13px;
+	display: inline-block;
+	border-radius: 200px;
+	margin-right: 5px;
+}
+.vendordash .list .items div span {
+	margin-left: 10px;
+	background-image: url("../img/item_remove.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 17px;
+	height: 17px;
+	vertical-align: middle;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.vendordash .other .rate {
+	width: 270px;
+	float: left;
+	vertical-align: top;
+	margin-right: 15px;
+}
+.vendordash .other .awards {
+	width: 365px;
+	float: left;
+	vertical-align: top;
+}
+
+.vendordash .other .input {
+	height: 32px;
+	border: 1px solid #c2c2c2;
+}
+.vendordash .other .input input {
+	height: 100%;
+	border: none;
+	background: white;
+	display: inline-block;
+	font-size: 13px;
+	box-sizing: border-box;
+	vertical-align: top;
+	outline: none;
+}
+.vendordash .other .input span {
+	width: 35px;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	color: #333;
+    line-height: 1.5;
+    border-right: 1px solid #c2c2c2;
+    height: 100%;
+    line-height: 1.6;
+}
+.vendordash .other .rate input {
+	width: 220px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.vendordash .other .input input[type='file'] {
+	display: none;
+}
+.vendordash .other .awards input {
+	width: 270px;
+	padding-left: 10px;
+	padding-right: 5px;
+	box-sizing: border-box;
+}
+.vendordash .other .awards button {
+	width: 90px;
+	text-align: center;
+	background: #00a3af;
+	color: white;
+	height: 100%;
+	border: none;
+	float: right;
+	transition: all 0.5s;
+	outline: none;
+}
+.vendordash .other .awards button:hover {
+	background: #00828c;
+	cursor: pointer;
+}
+
+.vendordash .left .shedule, .vendordash .left .profile {
+    background-color: #333e48;
+    color: white;
+    border: none;
+    border-top: 1px solid #7a8188;
+    border-bottom: 1px solid #262e36;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px 30px;
+    outline: none;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 40px;
+    display: inline-block;
+    margin-right: 18px;
+    transition: all 0.5s;
+}
+.vendordash .left .profile {
+	background-color: #00a3af;
+    color: white;
+    border-top: 1px solid #59c3cb;
+    border-bottom: 1px solid #007982;
+}
+.vendordash .left .shedule:hover {
+	background: #1f252b;
+}
+.vendordash .left .profile:hover {
+	background: #008690;
+}
+
+
+.vendordash .right .completed {
+	background: #f2f2f2;
+	padding: 20px;
+	text-align: center;
+	color: #333e48;
+	font-size: 24px;
+	font-weight: 400;
+}
+.vendordash .completed .stats {
+	margin-top: 20px;
+}
+.vendordash .completed .stats div {
+	color: #333e48;
+	font-weight: 600;
+	font-size: 16px;
+	display: inline-block;
+	width: 48%;
+	vertical-align: middle;
+}
+.vendordash .completed .stats div b {
+	font-size: 44px;
+	color: #00a3af;
+	display: block;
+	margin-top: 0px;
+}
+.vendordash .completed .stats hr {
+	width: 1px;
+	height: 75px;
+	background: #bfbebe;
+	border: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.vendordash .background {
+	text-align: center;
+	margin-top: 40px;
+}
+.vendordash .background h2 {
+	color: #333e48;
+	font-weight: 400;
+	font-style: italic;
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+.vendordash .background .input {
+	height: 32px;
+	border: 1px solid #c2c2c2;
+}
+.vendordash .background .input input {
+	height: 100%;
+	border: none;
+	background: white;
+	display: inline-block;
+	font-size: 13px;
+	box-sizing: border-box;
+	vertical-align: top;
+	outline: none;
+	width: 305px;
+	padding-left: 10px;
+}
+.vendordash .background .input button {
+	width: 90px;
+	text-align: center;
+	background: #00a3af;
+	color: white;
+	height: 100%;
+	border: none;
+	float: right;
+	transition: all 0.5s;
+	outline: none;
+}
+.vendordash .background .input button:hover {
+	background: #00828c;
+	cursor: pointer;
+}
+.vendordash .background .input input[type='file'] {
+	display: none;
+}
+
+.vendordash .right .ratings {
+	margin-top: 30px;
+}
+.vendordash .right .ratings h2 {
+	color: #333333;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+.vendordash .right .ratings .slide_buttons {
+	float: right;
+}
+.vendordash .right .ratings .slide_buttons img {
+	vertical-align: middle;
+	margin-left: 15px;
+	cursor: pointer;
+}
+.vendordash .ratings .item {
+
+}
+.vendordash .ratings hr {
+	border: none;
+	background: #d2d1d1;
+	height: 1px;
+	margin-top: 20px;
+	display: block;
+}
+.vendordash .ratings .item b {
+	color: #00a3af;
+	font-weight: 700;
+	font-size: 15px;
+	display: block;
+	margin-top: 15px;
+}
+.vendordash .ratings .item p {
+	font-weight: 400;
+	font-size: 15px;
+	color: #666666;
+}
+
+
+
+/*************************************/
+/*********** Customer DASH ***********/
+/*************************************/
+
+.customdash {
+	padding-top: 40px;
+	padding-bottom: 150px;
+}
+.customdash .info {
+	width: 650px;
+	display: inline-block;
+}
+.customdash .info .avatar {
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 1px 1px 1px #dcdcdc;
+    margin-bottom: 15px;
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+}
+.customdash .info .avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.customdash .info .name {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 25px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+}
+.customdash .info .name b {
+	display: block;
+	font-weight: 700;
+	color: #333;
+	text-transform: uppercase;
+	margin-top: 5px;
+}
+.customdash .info .about b {
+	color: #333;
+	font-size: 22px;
+	display: block;
+	margin-top: 10px;
+}
+.customdash .info .about b .price {
+	float: right;
+	vertical-align: middle;
+	font-weight: 700;
+	color: #00a3af;
+}
+.customdash .info .about .desc {
+	color: #333;
+	font-weight: 400;
+	font-size: 15px;
+	margin-top: 20px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #e4e4e4;
+	margin-bottom: 30px;
+    line-height: 1.5;
+}
+.customdash .info .rating {
+	margin-top: 15px;
+	font-weight: 400;
+	color: #333;
+}
+.customdash .info .rating span {
+	min-width: 210px;
+	display: inline-block;
+}
+.customdash .info .post,
+.customdash .info .profile {
+	font-size: 16px;
+	font-weight: 700;
+	color: white;
+	background: #333e48;
+	border-radius: 3px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	border-top: 1px solid rgba(255,255,255,0.1);
+	display: inline-block;
+	padding: 15px 10px;
+	min-width: 130px;
+	text-align: center;
+	margin-top: 50px;
+	margin-right: 15px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.customdash .info .profile {
+	background: #00a3af;
+	padding: 15px 30px;
+}
+.customdash .info .post:hover {
+	background: #252d33;
+}
+.customdash .info .profile:hover {
+	background: #03848e;
+}
+
+
+
+.customdash .items {
+	width: 405px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 80px;
+	box-sizing: border-box;
+}
+.customdash .items .head {
+	color: #333e48;
+	font-size: 24px;
+	font-weight: 400;
+	text-align: center;
+	padding: 25px;
+	background: #f2f2f2;
+}
+.customdash .items .head b {
+	display: block;
+	color: #00a3af;
+	font-size: 44px;
+	margin-top: 10px;
+}
+.customdash .items .list {
+	border: 1px solid #e1e1e1;
+}
+.customdash .items .list .item {
+	padding: 25px;
+	padding-right: 55px;
+	cursor: pointer;
+	transition: 0.5s all;
+	position: relative;
+}
+.customdash .items .list .item:hover {
+	background: #f1f1f1;
+}
+.customdash .items .list .item.selected {
+	background: #e5e5e5;
+}
+.customdash .items .list .item.selected:before {
+	content: '';
+	position: absolute;
+	top: calc(50% - 15px);
+	left: -30px;
+    border: 15px solid transparent; /* Прозрачные границы */
+    border-right: 15px solid #e5e5e5; /* Добавляем треугольник */
+}
+.customdash .items .list .item b {
+	color: #333;
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 25px;
+	display: block;
+}
+.customdash .items .list .item p {
+	margin: 0px;
+	margin-bottom: 20px;
+	color: #333;
+	font-size: 15px;
+	font-weight: 400;
+	display: block;
+}
+.customdash .items .list .item a {
+	font-size: 14px;
+	font-weight: 700;
+	color: #00a3af;
+	display: block;
+}
+.customdash .items .list .item .price {
+	float: right;
+	color: #00a3af;
+	font-size: 24px;
+	vertical-align: middle;
 }

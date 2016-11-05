@@ -13,20 +13,57 @@
 
 	<div class="avatar">
 		<div class="image"><div></div></div>
-		<div class="save">Change Profile Picture</div>
+		<input type="file" class="hidden" id="file_avatar">
+		<div class="save" ng-click="avatarSave()">Change Profile Picture</div>
 	</div>
 
 	<div class="info">
-		<div class="item"><span>First name:</span>JOHN<div class="edit">Edit</div></div>
-		<div class="item"><span>Last name:</span>SMITH<div class="edit">Edit</div></div>
-		<div class="item"><span>Address:</span>560 Judah St & 15th Ave, Apt 5 San Francisco, CA, 230903<div class="edit">Edit</div></div>
-		<div class="item half main"><span>Cell phone:</span>98-7548-453<div class="edit">Edit</div></div>
-		<div class="item half alter"><span>Alternative phone:</span>98-7548-453<div class="edit">Edit</div></div>
-		<div class="item"><span>Paypal:</span>zippyigs@info.com<div class="edit">Edit</div></div>
-		<div class="item"><span>Type:</span>Vendor<div class="edit">Edit</div></div>
-		<div class="item"><span>Zip Code:</span>85410<div class="edit">Edit</div></div>
+		<div class="item">
+			<span>First name:</span>
+			<input type="text" disabled="true" class="w70 upper" ng-model="account.first_name">
+			<div class="edit">Edit</div>
+		</div>
+		<div class="item">
+			<span>Last name:</span>
+			<input type="text" disabled="true" class="w70 upper" ng-model="account.last_name">
+			<div class="edit">Edit</div>
+		</div>
+		<div class="item">
+			<span>Address:</span>
+			<input type="text" disabled="true" class="w70" ng-model="account.address">
+			<div class="edit">Edit</div>
+		</div>
+		<div class="item half main">
+			<span>Cell phone:</span>
+			<input type="text" disabled="true" class="w40" ng-model="account.phone">
+			<div class="edit">Edit</div>
+		</div>
+		<div class="item half alter">
+			<span>Alternative phone:</span>
+			<input type="text" disabled="true" class="w40" ng-model="account.alt_phone">
+			<div class="edit">Edit</div>
+		</div>
+		<div class="item">
+			<span>Paypal:</span>
+			<input type="text" disabled="true" class="w70" ng-model="account.pay_pal">
+			<div class="edit">Edit</div>
+		</div>
+		<div class="item">
+			<span>Type:</span>
+			<select disabled="true" class="w70 select" ng-model="account.type">
+				<option value="1">Client</option>
+				<option value="2">Vendor</option>
+				<option value="3">Client & Vendor</option>
+			</select>
+			<div class="edit">Edit</div>
+		</div>
+		<div class="item">
+			<span>Zip Code:</span>
+			<input type="text" disabled="true" class="w70" ng-model="account.zip_code">
+			<div class="edit">Edit</div>
+		</div>
 
-		<div class="save">Save Settings</div>
+		<div class="save" ng-click="save()">Save Settings<div class="success">Saved!</div></div>
 	</div>
 
 	<div class="clear"></div>
