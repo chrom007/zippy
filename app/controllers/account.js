@@ -58,7 +58,7 @@ angular.module("zippyApp").controller('accountController', ['$scope', '$rootScop
 				console.log(data);
 				$(".account .avatar .image div").css("backgroundImage", "url(" + image + ")")
 			}, function(error){
-				alert("ERROR upload. Code: " + error.status);
+				console.log("ERROR upload. Code: " + error.status);
 			});
 		});
 	});
