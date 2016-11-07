@@ -1,2 +1,11 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+components/
+app/components/
+tmp
+.DS_Store
+.idea
 zippy.sublime-workspace
 zippy.sublime-project

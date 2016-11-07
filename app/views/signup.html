@@ -1,0 +1,41 @@
+
+<div class="header header_signup">
+	
+	<div ng-include="'views/menu.html'"></div>
+
+	<div class="form_sign reg">
+		<div class="top">
+			<div class="icon reg"></div>
+			<h2>REGISTER</h2>
+		</div>
+
+		<div class="label"><img src="img/icon_sign_login.png">Name</div>
+		<input type="text" ng-model="login">
+
+		<div class="label"><img src="img/icon_sign_pass.png">Password</div>
+		<input type="password" ng-model="password">
+
+		<div class="label"><img src="img/icon_sign_pass.png">Confirm Password</div>
+		<input type="password" ng-model="password_2">
+
+		<button ng-click="signup()">Register Now</button>
+
+		<div class="go_reg">
+			Do you have on account? <a href="/signin">Login Here</a>
+		</div>
+
+	</div>	
+
+</div>
+
+
+<div class="wrap terms">
+	<h2>Terms & Conditions</h2>
+
+	<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+</div>
+
+
+
+
+<div ng-include="'views/footer.html'"></div>

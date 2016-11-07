@@ -1,4 +1,4 @@
-app.service('API', function($http){
+angular.module("zippyApp").service('API', function($http){
 	var url = "http://26756.s.t4vps.eu";
 
 	return {
