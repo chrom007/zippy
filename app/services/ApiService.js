@@ -45,7 +45,7 @@ angular.module("zippyApp").service('API', function($http){
 
 		accountSave: function(token, account) {
 			return $http({
-				url: url + "/api/v1/client/profile/",
+				url: url + "/api/v1/auth/profile/",
 				method: "POST",
 				headers: {
 					Authorization: "Token " + token
