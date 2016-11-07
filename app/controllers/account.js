@@ -48,13 +48,17 @@ angular.module("zippyApp").controller('accountController', ['$scope', '$rootScop
 			
 			var avatar = $scope.avatar;
 			var reader = new FileReader();
+			var image = null
 			reader.readAsDataURL(file);
 			reader.addEventListener("load", function () {
-				$(".account .avatar .image div").css("backgroundImage", "url(" + reader.result + ")");
+				image = reader.result;
 		  	}, false);
 
 			API.accountAvatar(token, avatar).then(function(data){
 				console.log(data);
+				$(".account .avatar .image div").css("backgroundImage", "url(" + image + ")")
+			}, function(error){
+				alert("ERROR upload. Code: " + error.status);
 			});
 		});
 	});
